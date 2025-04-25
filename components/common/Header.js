@@ -41,7 +41,7 @@ export default function Header() {
             className="rounded-full border-0 bg-background text-black font-light hover:bg-transparent hover:text-white"
             aria-label="Contact Us"
           >
-            Let's Connect
+            Let&apos;s Connect
           </Button>
         </div>
 
@@ -75,7 +75,7 @@ export default function Header() {
                     className="rounded-full border-0 bg-background text-black font-light hover:bg-transparent hover:text-white"
                     aria-label="Contact Us"
                   >
-                    Let's Connect
+                    Let&apos;s Connect
                   </Button>
                 </div>
               </div>
