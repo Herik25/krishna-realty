@@ -6,8 +6,8 @@ import {
   CarouselItem,
 } from "@/components/custom/EmblaCarousel";
 import { Button } from "@/components/ui/button";
-import { Calculator } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -26,7 +26,7 @@ export default function Home() {
           </h1>
 
           <p className="mx-auto mb-6 max-w-2xl md:text-lg font-light text-muted-foreground lg:text-xl">
-            JV Consultant · Investment Company · Sole Selling
+            JV Consultant · Investment Consultant · Sole Selling
           </p>
 
           <div className="w-min mx-auto">
@@ -195,60 +195,71 @@ export default function Home() {
             image: "/images/building.png",
             alt: "Modern Building",
             title: "JV Consultant",
-            description1:
-              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, voluptates porro. Unde nemo ipsum maxime libero architecto voluptates.",
-            description2:
-              "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, facere numquam a itaque inventore saepe quo adipisci sed ipsam.",
+            description: [
+              "Find perfect partner accordingly builder's requirement and working pattern",
+              "Fill the gap to gear up the projects grow",
+              "Establish the connection between Investors, Land Owners and developer for long term planning and execution.",
+              "Create a situation where Everyone is winner.",
+            ],
+            link: "/jv-consultant",
           },
           {
             id: 2,
             image: "/images/building.png",
+            alt: "Luxury Apartments",
+            title: "Investment Consultant",
+            description: [
+              "We connect builders with partners who align with their project goals and working styles.",
+              "Our solutions bridge gaps, helping accelerate the progress and expansion of projects.",
+              "We facilitate long-term relationships between investors, landowners, and developers.",
+              "We ensure that all parties benefit, fostering trust and long-term collaboration.",
+            ],
+            link: "/",
+          },
+          {
+            id: 3,
+            image: "/images/building.png",
             alt: "Real Estate Office",
-            title: "Investment Company",
-            description1:
-              "Pariatur nemo debitis libero sed quidem ducimus ratione maiores, ex deleniti vitae reprehenderit.",
-            description2:
-              "Omnis, nisi eaque! Ad esse, amet dolorum qui iure ex odio.",
+            title: "Sole Selling",
+            description: [
+              "Builders will be free from selling pressure. So, they can focus on planning of next upcoming projects",
+              "Fast selling is beneficial for builders that's why they can develop more and more projects.",
+              "Krishna Realty have wide experience of sales and scientific marketing",
+              "Always be ready with Plan A and Plan B.",
+            ],
+            link: "/",
           },
           {
             id: 3,
             image: "/images/building.png",
             alt: "Luxury Apartments",
             title: "Sole Selling",
-            description1:
-              "Voluptatem assumenda ullam natus consequuntur blanditiis quaerat deserunt perferendis rerum nobis non?",
-            description2:
-              "Corporis, facere numquam a itaque inventore saepe quo adipisci sed ipsam, quaerat.",
+            description: ["", "", "", ""],
+            link: "/",
           },
           {
             id: 4,
             image: "/images/building.png",
             alt: "Modern Building",
             title: "JV Consultant",
-            description1:
-              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, voluptates porro. Unde nemo ipsum maxime libero architecto voluptates.",
-            description2:
-              "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, facere numquam a itaque inventore saepe quo adipisci sed ipsam.",
+            description: ["", "", "", ""],
+            link: "/",
           },
           {
             id: 5,
             image: "/images/building.png",
             alt: "Real Estate Office",
             title: "Investment Company",
-            description1:
-              "Pariatur nemo debitis libero sed quidem ducimus ratione maiores, ex deleniti vitae reprehenderit.",
-            description2:
-              "Omnis, nisi eaque! Ad esse, amet dolorum qui iure ex odio.",
+            description: ["", "", "", ""],
+            link: "/",
           },
           {
             id: 6,
             image: "/images/building.png",
             alt: "Luxury Apartments",
             title: "Sole Selling",
-            description1:
-              "Voluptatem assumenda ullam natus consequuntur blanditiis quaerat deserunt perferendis rerum nobis non?",
-            description2:
-              "Corporis, facere numquam a itaque inventore saepe quo adipisci sed ipsam, quaerat.",
+            description: ["", "", "", ""],
+            link: "/",
           },
         ].map((card, index) => (
           <div key={index} className="px-4">
@@ -266,22 +277,19 @@ export default function Home() {
                   </span>
                 </h3>
 
-                <p className="text-center md:text-start lg:text-lg leading-relaxed">
-                  {card.description1}
-                </p>
-
-                <p className="text-center md:text-start lg:text-lg leading-relaxed">
-                  {card.description2}
-                </p>
+                <ul className="text-center md:text-start leading-relaxed md:list-disc pl-4">
+                  {card.description.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
+                </ul>
 
                 <div className="w-min mx-auto md:mx-0">
                   <div className="rounded-full bg-gradient-to-r from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] p-[1px] lg:block cursor-pointer">
-                    <Button
-                      className="rounded-full border-0 text-xs sm:text-sm bg-background text-gray-700 font-light hover:bg-transparent hover:text-white"
-                      aria-label="Read More"
-                    >
-                      Read More
-                    </Button>
+                    <Link href={card.link} passHref>
+                      <div className="rounded-full border-0 text-xs text-nowrap sm:text-sm bg-background text-gray-700 font-light hover:bg-transparent hover:text-white px-6 py-2 text-center">
+                        Read More
+                      </div>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -326,30 +334,39 @@ export default function Home() {
       </section>
 
       <Carousel
-        className="h-24"
+        className="h-36"
         opts={{ align: "start", loop: true, duration: 30 }}
         plugins={{ Autoscroll: { speed: 1 } }}
       >
         <CarouselContent>
           {[
-            "AstraZeneca.svg",
-            "dtn.svg",
-            "Cambria.svg",
-            "Basf.svg",
-            "Cambria.svg",
-            "Edmentum.svg",
-            "Graco.svg",
-            "JuniorAchivment.svg",
-            "PropertyFinder.svg",
-            "AstraZeneca.svg",
-            "dtn.svg",
-            "Cambria.svg",
-            "Basf.svg",
-            "Cambria.svg",
-            "Edmentum.svg",
-            "Graco.svg",
-            "JuniorAchivment.svg",
-            "PropertyFinder.svg",
+            "aurum-one.svg",
+            "opec-heights.svg",
+            "prabhu-group.svg",
+            "aurum-residency.svg",
+            "rb-elements.svg",
+            "saven-sarface.svg",
+            "prabhu-sneh.svg",
+            "sharnam-heights.svg",
+            "the-taurus.svg",
+            "prabhu-heights.svg",
+            "saven-serena.svg",
+            "west-gate-2.svg",
+            "prabhu-navan-01.svg",
+            "sopan-heights.svg",
+            "sanskar-elegance.svg",
+            "one-mavdi.svg",
+            "sopan-hill.svg",
+            "the-one-world.svg",
+            "sanskar-sanidhya.svg",
+            "rk-group.svg",
+            "pride-signate.svg",
+            "sopan-luxuria.svg",
+            "sanskar-heights.svg",
+            "marrygold-square.svg",
+            "aalap-astoria.svg",
+            "pride-aura.svg",
+            "sopan-elegance.svg",
           ].map((a, i) => (
             <CarouselItem className="h-full basis-1/3 lg:basis-[12.5%]" key={i}>
               <Image
@@ -357,7 +374,7 @@ export default function Home() {
                 alt={a.replace(".png", "")}
                 width={125}
                 height={64}
-                className="mx-auto block h-full w-auto opacity-60"
+                className="mx-auto block h-28 w-28"
               />
             </CarouselItem>
           ))}
