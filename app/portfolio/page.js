@@ -292,7 +292,7 @@ export default function Portfolio() {
               </span>
             </h2>
             <p className="mt-2 text-lg sm:text-xl font-light text-center">
-              Our awesome clients we've had the pleasure to work with!
+              Our awesome clients we&apos;ve had the pleasure to work with!
             </p>
 
             {/* Client Logos */}
@@ -354,7 +354,7 @@ export default function Portfolio() {
               </span>
             </h2>
             <p className="mt-2 text-lg sm:text-xl font-light text-center">
-              Our awesome clients we've had the pleasure to work with!
+              Our awesome clients we&apos;ve had the pleasure to work with!
             </p>
 
             {/* Client Logos */}
