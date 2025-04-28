@@ -244,7 +244,7 @@ export default function Portfolio() {
   return (
     <div className="font-inter">
       <Header />
-      <section className="mx-auto grid h-[calc(100vh-7rem)] max-h-[800px] max-w-5xl place-items-center px-4 text-center">
+      <section className="mx-auto grid h-[calc(100vh-5rem)] max-h-[800px] max-w-5xl place-items-center px-4 text-center">
         <div className="text-center text-black">
           <h1 className="text-5xl sm:text-6xl font-bold leading-tight">
             Welcome to{" "}

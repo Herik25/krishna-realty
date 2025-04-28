@@ -1,5 +1,6 @@
 import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
+import CustomAccordian from "@/components/custom/CustomAccordian";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
@@ -126,33 +127,39 @@ export default function JvConsultant() {
       </section>
 
       {/* Call to Action */}
-      <section className="text-center my-16 lg:my-24 mx-auto max-w-5xl px-4">
-        <h2 className="text-3xl font-bold text-black mb-4">
-          Ready to Build Winning Partnerships?
-        </h2>
-        <p className="text-lg text-gray-600 mb-4">
-          Connect with us today and take your project to the next level.
-        </p>
-        <div className="w-min mx-auto">
-          <div className="flex gap-4">
-            <div className="rounded-full bg-gradient-to-r from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] p-[1px] block cursor-pointer">
-              <Button
-                className="rounded-full border-0 bg-background text-black font-light hover:bg-transparent hover:text-white"
-                aria-label="Contact Us"
-              >
-                Let&apos;s Connect
-              </Button>
-            </div>
-            <div className="rounded-full bg-gradient-to-r from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] p-[1px] block cursor-pointer">
-              <Button
-                className="rounded-full border-0 bg-background text-black font-light hover:bg-transparent hover:text-white"
-                aria-label="Contact Us"
-              >
-                Our Portfolio
-              </Button>
+      <section className="text-center my-16 lg:my-24 bg-black">
+        <div className="mx-auto max-w-5xl px-4 py-16">
+          <h2 className="text-3xl font-bold text-white mb-4">
+            Ready to Build Winning Partnerships?
+          </h2>
+          <p className="text-lg text-gray-200 mb-4">
+            Connect with us today and take your project to the next level.
+          </p>
+          <div className="w-min mx-auto">
+            <div className="flex gap-4">
+              <div className="rounded-full bg-gradient-to-r from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] p-[1px] block cursor-pointer">
+                <Button
+                  className="rounded-full border-0 bg-black text-white font-light hover:bg-transparent hover:text-white"
+                  aria-label="Contact Us"
+                >
+                  Let&apos;s Connect
+                </Button>
+              </div>
+              <div className="rounded-full bg-gradient-to-r from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] p-[1px] block cursor-pointer">
+                <Button
+                  className="rounded-full border-0 bg-black text-white font-light hover:bg-transparent hover:text-white"
+                  aria-label="Contact Us"
+                >
+                  Our Portfolio
+                </Button>
+              </div>
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="my-16 lg:my-24 px-4 max-w-5xl mx-auto">
+        <CustomAccordian />
       </section>
 
       <Footer />

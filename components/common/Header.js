@@ -5,23 +5,28 @@ import { Button } from "../ui/button";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "../ui/sheet";
 
 const navLinks = [
-  { href: "/", label: "Services" },
+  { href: "/services", label: "Services" },
   { href: "/portfolio", label: "Portfolio" },
-  { href: "/", label: "Career" },
+  { href: "/career", label: "Career" },
   { href: "/", label: "Blogs" },
-  { href: "/", label: "About Us" },
-  { href: "/", label: "Team" },
+  { href: "/about-us", label: "About Us" },
+  { href: "/team", label: "Team" },
 ];
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 mx-auto h-[6.1rem] p-4 py-6 bg-background">
+    <header className="sticky top-0 z-50 mx-auto h-20 p-4 bg-background shadow-md border-b border-b-black">
       <nav
-        className="grid grid-cols-[auto_1fr_auto] max-w-7xl mx-auto items-center gap-5 rounded-xl border border-black px-6 py-4 lg:grid-cols-[auto_1fr_repeat(6,auto)_1fr_auto]"
+        className="grid grid-cols-[auto_1fr_auto] max-w-7xl h-full mx-auto items-center gap-5 rounded-xl lg:grid-cols-[auto_1fr_repeat(6,auto)_1fr_auto]"
         aria-label="Main Navigation"
       >
         <Link href="/" aria-label="Home">
-          <Image src="/images/logo.svg" alt="Logo" height={34} width={34} />
+          <Image
+            src="/images/kirshna-dark.svg"
+            alt="Logo"
+            height={35}
+            width={180}
+          />
         </Link>
 
         <div className="hidden lg:block" />

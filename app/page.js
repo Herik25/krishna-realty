@@ -1,5 +1,6 @@
 import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
+import CustomAccordian from "@/components/custom/CustomAccordian";
 import {
   Carousel,
   CarouselContent,
@@ -13,7 +14,7 @@ export default function Home() {
   return (
     <div className="font-inter">
       <Header />
-      <section className="mx-auto grid h-[calc(100vh-7rem)] max-h-[800px] max-w-5xl place-items-center px-4 text-center">
+      <section className="mx-auto grid h-[calc(100vh-5rem)] max-h-[800px] max-w-5xl place-items-center px-4 text-center">
         <div>
           <p className="md:text-lg font-light md:tracking-wide uppercase text-muted-foreground">
             Real Estate Company
@@ -230,36 +231,43 @@ export default function Home() {
             link: "/",
           },
           {
-            id: 3,
-            image: "/images/building.png",
-            alt: "Luxury Apartments",
-            title: "Sole Selling",
-            description: ["", "", "", ""],
-            link: "/",
-          },
-          {
             id: 4,
             image: "/images/building.png",
-            alt: "Modern Building",
-            title: "JV Consultant",
-            description: ["", "", "", ""],
-            link: "/",
+            alt: "Services",
+            title: "Services",
+            description: [
+              "Comprehensive real estate consultancy tailored to your needs.",
+              "Sole selling expertise ensuring faster project closures.",
+              "Strategic marketing solutions to maximize project visibility.",
+              "End-to-end support from project launch to final handover.",
+            ],
+            link: "/services",
           },
           {
             id: 5,
             image: "/images/building.png",
-            alt: "Real Estate Office",
-            title: "Investment Company",
-            description: ["", "", "", ""],
-            link: "/",
+            alt: "Portfolio",
+            title: "Portfolio",
+            description: [
+              "A diverse range of successfully completed real estate projects.",
+              "Residential, commercial, and luxury developments across the city.",
+              "Trusted by leading builders and investors for consistent results.",
+              "Each project reflects our commitment to quality and excellence.",
+            ],
+            link: "/portfolio",
           },
           {
             id: 6,
             image: "/images/building.png",
-            alt: "Luxury Apartments",
-            title: "Sole Selling",
-            description: ["", "", "", ""],
-            link: "/",
+            alt: "Experts",
+            title: "Experts",
+            description: [
+              "A team of seasoned professionals with deep industry knowledge.",
+              "Dedicated specialists for sales, marketing, and client servicing.",
+              "Proven track record of exceeding sales and partnership goals.",
+              "Passionate about building lasting relationships with clients.",
+            ],
+            link: "/team",
           },
         ].map((card, index) => (
           <div key={index} className="px-4">
@@ -333,8 +341,39 @@ export default function Home() {
         ))}
       </section>
 
+      <section className="text-center my-16 lg:my-24 bg-black">
+        <div className="mx-auto max-w-5xl px-4 py-16">
+          <h2 className="text-3xl font-bold text-white mb-4">
+            Ready to Build Winning Partnerships?
+          </h2>
+          <p className="text-lg text-gray-200 mb-4">
+            Connect with us today and take your project to the next level.
+          </p>
+          <div className="w-min mx-auto">
+            <div className="flex gap-4">
+              <div className="rounded-full bg-gradient-to-r from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] p-[1px] block cursor-pointer">
+                <Button
+                  className="rounded-full border-0 bg-black text-white font-light hover:bg-transparent hover:text-white"
+                  aria-label="Contact Us"
+                >
+                  Let&apos;s Connect
+                </Button>
+              </div>
+              <div className="rounded-full bg-gradient-to-r from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] p-[1px] block cursor-pointer">
+                <Button
+                  className="rounded-full border-0 bg-black text-white font-light hover:bg-transparent hover:text-white"
+                  aria-label="Contact Us"
+                >
+                  Our Portfolio
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Carousel
-        className="h-36"
+        className="h-20"
         opts={{ align: "start", loop: true, duration: 30 }}
         plugins={{ Autoscroll: { speed: 1 } }}
       >
@@ -374,12 +413,16 @@ export default function Home() {
                 alt={a.replace(".png", "")}
                 width={125}
                 height={64}
-                className="mx-auto block h-28 w-28"
+                className="mx-auto block h-20 w-20 grayscale"
               />
             </CarouselItem>
           ))}
         </CarouselContent>
       </Carousel>
+
+      <section className="my-16 lg:my-24 px-4 max-w-5xl mx-auto">
+        <CustomAccordian />
+      </section>
 
       <Footer />
     </div>
