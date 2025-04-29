@@ -1,4 +1,30 @@
+import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
+import ApplicationForm from "@/components/custom/ApplicationForm";
+import CustomAccordian from "@/components/custom/CustomAccordian";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
+import {
+  Atom,
+  BanknoteArrowUp,
+  BrainCircuit,
+  ChartCandlestick,
+  ChartNoAxesCombined,
+  Earth,
+  Gem,
+  HandCoins,
+  Hospital,
+  Lightbulb,
+  PartyPopper,
+  ShieldUser,
+  Trophy,
+  Users,
+} from "lucide-react";
 import Image from "next/image";
 
 const careerSection = [
@@ -80,7 +106,7 @@ export default function Career() {
         ))}
       </section>
 
-      <section className="max-w-5xl mx-auto my-16 lg:my-24">
+      <section className="max-w-5xl mx-auto my-16 lg:my-24 px-4">
         <h2 className="text-2xl sm:text-4xl font-bold leading-tight text-center">
           <span className="bg-gradient-to-r from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] bg-clip-text text-transparent">
             Our Ethos
@@ -91,49 +117,44 @@ export default function Career() {
           experiences. We thus strive to constantly better ourselves through
           self-reflection and keep our ethos as the foundation of our conduct
         </p>
-        <div className="mt-10 grid grid-cols-3 gap-8">
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
           {[
             {
               t: "INTEGRITY",
               d: "Integrity is doing the right thing, even when no one is watching.",
-              i: "",
+              i: <BrainCircuit size={32} />,
             },
             {
               t: "TEAM WORK",
               d: "Team work results in success or disaster. We love success. We abhor disaster.",
-              i: "",
+              i: <Users size={32} />,
             },
             {
               t: "TRANSPARENCY",
               d: "Be transparent. Be clear. Be happy",
-              i: "",
+              i: <Gem size={32} />,
             },
             {
               t: "INNOVATIVENESS",
               d: "Dare to think. Believe in it. Execute it",
-              i: "",
+              i: <Lightbulb size={32} />,
             },
             {
               t: "USER CENTRIC",
               d: "As the cliché goes, ‘Customer is the King’. Well, honestly he is and will remain so forever and ever.",
-              i: "",
+              i: <ShieldUser size={32} />,
             },
             {
               t: "DYNAMIC",
               d: "Life is dynamic. So be alive.",
-              i: "",
+              i: <Atom size={32} />,
             },
           ].map((item, index) => (
             <div
               key={index}
               className="border border-black rounded-sm p-4 grid grid-cols-[auto_1fr] gap-4"
             >
-              <Image
-                src={`/images/${item.i}`}
-                alt={item.t}
-                height={40}
-                width={40}
-              />
+              {item.i}
               <div>
                 <h3>{item.t}</h3>
                 <p className="text-sm">{item.d}</p>
@@ -142,6 +163,191 @@ export default function Career() {
           ))}
         </div>
       </section>
+
+      <section className="max-w-5xl mx-auto my-16 lg:my-24 px-4">
+        <h2 className="text-2xl sm:text-4xl font-bold leading-tight text-center">
+          <span className="bg-gradient-to-r from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] bg-clip-text text-transparent">
+            Benefits And Perks
+          </span>
+        </h2>
+        <p className="mt-2 text-lg sm:text-xl font-light text-center">
+          We are of a strong opinion that our employees are the architects of
+          our success and growth. We thus leave no stone unturned to extend our
+          gratitude and appreciation to them.
+        </p>
+        <div className="mt-10 grid grid-cols-2 md:grid-cols-4">
+          <div className="p-4 grid grid-cols-[auto_1fr] border-r border-b border-dashed border-black gap-4">
+            <HandCoins size={32} />
+            <div>
+              <h3>Highly Competitive Compensation</h3>
+            </div>
+          </div>
+          <div className="p-4 grid grid-cols-[auto_1fr] md:border-r border-b border-dashed border-black gap-4">
+            <ChartNoAxesCombined size={32} />
+            <div>
+              <h3>Supersonic Growth</h3>
+            </div>
+          </div>
+          <div className="p-4 grid grid-cols-[auto_1fr] border-r border-b border-dashed border-black gap-4">
+            <Trophy size={32} />
+            <div>
+              <h3>Best Incentive Structure</h3>
+            </div>
+          </div>
+          <div className="p-4 grid grid-cols-[auto_1fr] border-b border-dashed border-black gap-4">
+            <BanknoteArrowUp size={32} />
+            <div>
+              <h3>Bi-Annual Appraisals for Sales</h3>
+            </div>
+          </div>
+          <div className="p-4 grid grid-cols-[auto_1fr] border-b md:border-b-0 border-r border-dashed border-black gap-4">
+            <Earth size={32} />
+            <div>
+              <h3>Global Movement Opportunities</h3>
+            </div>
+          </div>
+          <div className="p-4 grid grid-cols-[auto_1fr] border-b md:border-b-0 md:border-r border-dashed border-black gap-4">
+            <ChartCandlestick size={32} />
+            <div>
+              <h3>Employee Stock Options</h3>
+            </div>
+          </div>
+          <div className="p-4 grid grid-cols-[auto_1fr] border-r border-dashed border-black gap-4">
+            <Hospital size={32} />
+            <div>
+              <h3>Healthcare & Insurance</h3>
+            </div>
+          </div>
+          <div className="p-4 grid grid-cols-[auto_1fr] border-dashed border-black gap-4">
+            <PartyPopper size={32} />
+            <div>
+              <h3>Fun, Dynamic Environment</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="max-w-5xl mx-auto my-16 lg:my-24 relative px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        {/* LEFT - Description + Temp Jobs */}
+        <div>
+          <h2 className="text-3xl font-bold text-black mb-4">
+            Join Our Team of Innovators
+          </h2>
+          <p className="text-gray-800 mb-6">
+            We&apos;re always looking for talented individuals who are
+            passionate about building creative solutions. Whether you&apos;re a
+            coding wizard or a design mastermind, there&apos;s a place for you
+            here.
+          </p>
+
+          <h3 className="text-xl font-semibold text-black mb-3">
+            Available Positions
+          </h3>
+          <Accordion type="single" collapsible className="w-full space-y-2">
+            <AccordionItem className="border-b-black" value="frontend">
+              <AccordionTrigger className="hover:no-underline cursor-pointer">
+                Frontend Developer (Remote)
+              </AccordionTrigger>
+              <AccordionContent>
+                <p className="text-sm text-black">
+                  🔹 React, TypeScript, Tailwind CSS
+                  <br />
+                  🔹 2+ years of experience
+                  <br />
+                  🔹 Good understanding of UI/UX and responsive design
+                </p>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem className="border-b-black" value="backend">
+              <AccordionTrigger className="hover:no-underline cursor-pointer">
+                Backend Developer
+              </AccordionTrigger>
+              <AccordionContent>
+                <p className="text-sm text-gray-800">
+                  🔹 Node.js, Express, MongoDB
+                  <br />
+                  🔹 REST APIs and Microservices
+                  <br />
+                  🔹 Experience with authentication and authorization
+                </p>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem className="border-b-black" value="fullstack">
+              <AccordionTrigger className="hover:no-underline cursor-pointer">
+                Full Stack Developer
+              </AccordionTrigger>
+              <AccordionContent>
+                <p className="text-sm text-gray-800">
+                  🔹 MERN Stack expertise
+                  <br />
+                  🔹 Comfortable with both frontend and backend
+                  <br />
+                  🔹 Strong problem-solving skills
+                </p>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem className="border-b-black" value="designer">
+              <AccordionTrigger className="hover:no-underline cursor-pointer">
+                UI/UX Designer
+              </AccordionTrigger>
+              <AccordionContent>
+                <p className="text-sm text-gray-800">
+                  🔹 Figma, Adobe XD, or Sketch
+                  <br />
+                  🔹 Portfolio required
+                  <br />
+                  🔹 Ability to translate ideas into wireframes and prototypes
+                </p>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
+
+        {/* RIGHT - Form */}
+        <div className="sticky top-28 left-0">
+          <ApplicationForm />
+        </div>
+      </section>
+
+      <section className="text-center my-16 lg:my-24 bg-black">
+        <div className="mx-auto max-w-5xl px-4 py-16">
+          <h2 className="text-3xl font-bold text-white mb-4">
+            Ready to Build Winning Partnerships?
+          </h2>
+          <p className="text-lg text-gray-200 mb-4">
+            Connect with us today and take your project to the next level.
+          </p>
+          <div className="w-min mx-auto">
+            <div className="flex gap-4">
+              <div className="rounded-full bg-gradient-to-r from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] p-[1px] block cursor-pointer">
+                <Button
+                  className="rounded-full border-0 bg-black text-white font-light hover:bg-transparent hover:text-white"
+                  aria-label="Contact Us"
+                >
+                  Let&apos;s Connect
+                </Button>
+              </div>
+              <div className="rounded-full bg-gradient-to-r from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] p-[1px] block cursor-pointer">
+                <Button
+                  className="rounded-full border-0 bg-black text-white font-light hover:bg-transparent hover:text-white"
+                  aria-label="Contact Us"
+                >
+                  Our Portfolio
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="my-16 lg:my-24 px-4 max-w-5xl mx-auto">
+        <CustomAccordian />
+      </section>
+
+      <Footer />
     </div>
   );
 }

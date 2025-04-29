@@ -48,9 +48,14 @@ export default function Footer() {
         {/* Logo + Description */}
         <div>
           <Link href="/" aria-label="Home">
-            <Image src="/images/logo.svg" alt="Logo" width={40} height={40} />
+            <Image
+              src="/images/kirshna-dark.svg"
+              alt="Logo"
+              height={35}
+              width={180}
+            />
           </Link>
-          <p className="text-sm leading-relaxed max-w-80 mt-2">
+          <p className="text-sm leading-relaxed max-w-80 mt-3">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis,
             facere numquam a itaque inventore saepe quo adipisci sed ipsam.
           </p>

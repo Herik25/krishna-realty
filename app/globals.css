@@ -123,3 +123,13 @@
 @theme {
   --font-inter: "inter", "sans-serif";
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  background-color: #fffc00 !important;
+  color: #000 !important;
+  -webkit-text-fill-color: #000 !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
